@@ -1,5 +1,5 @@
 //by Shubhartthak
-//Create classes that capture bank customers and bank accounts. A customer has a first and last name. An account has a customer and a balance. Make objects for two accounts held by the same customer.
+//Create classes that capturebank customersandbank accounts. A customer has a first and last name. An account has a customer and a balance. Make objects for two accounts held by the same customer.
 #include<iostream>
 using std::cout;
 using std::cin;
@@ -8,37 +8,40 @@ using std::string;
 
 class Bank_customer{
   string firstname,lastname;
-public:
-  void name_input(){
-    cout<<"Please enter customer's first name: ";
-    cin>>firstname;
-    cout<<"Please enter customer's last name: ";
-    cin>>lastname;
+public: Bank_customer(){
+    firstname = "Shubharthak";
+    lastname = "Sangharsha";
   }
-  void name_output(){
-    cout<<"Customer's first name: " << firstname<<endl<<"Customer's last name: "<<lastname<<endl;
+  string get_firstname(){
+      return firstname;
+  }
+  string get_lastname(){
+  		return lastname;
   }
 };
-class Bank_account: public Bank_customer{
+class Bank_account{
   double balance;
+  Bank_customer customer;
 public:
-  void input(){
-    cout<<"Please enter customer's balance: ";
-    cin>>balance;
+  Bank_account(){
+    balance = 123283;
   }
-  void output(){
-    cout<<"Customer's balance: "<<balance<<endl;
+  
+  int get_balance() {
+  	return balance;
+  }
+  void result(){
+    cout << "First name: "<< customer.get_firstname()<<" " ;
+    cout<< customer.get_lastname()<< endl;
+    cout<<"Customer's Balance: "<< balance<<endl;
   }
 };  
   
 int main(){
-  Bank_account obj1;
-  obj1.name_input();
-  obj1.input();
-  obj1.input();
-  obj1.name_output();
-  obj1.output();
-
+  Bank_account b1,b2;
+  b1.result();
+  cout << endl;
+  b2.result();
   return 0;
 }
   
