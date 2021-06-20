@@ -1,37 +1,31 @@
+//By Shubharthak
 #include<iostream>
+#include<math.h>
 using namespace std;
-
 class Football{
-  int match, sum,point,average;
-
-public:
-  void input(){
-    cout<<"Please enter number of match: ";
-    cin>>match;
-
-    for(int i = 0 ;  i < match ; i ++){
-      for(int j = 0; j < i ; j++ ){
-      cout<<"Please enter points: ";
-      cin>>point;
-      if(point == -1 ) {
-	break;
-      }
-      sum = sum+ point;
-      }
+public: 
+void calculate(){
+    int sum=0;
+    int count=0;
+    while(1){
+            cout<<"Count before : " << count <<endl;
+      cout<<"enter the score in "<<++count<<" match"<<endl;
+      cout<<"Count before : " << count <<endl;
+        int score;
+        cin>>score;
+        if(score==-1){
+            break;
+        }
+        sum+=score;   
     }
-
-  }
-      
- inline int calculate(int sum){
-   average= sum / match;
-     return average;
- }
+        cout<<"Total points in the match is "<<sum<<endl;
+        cout<<"average points of series is "<<sum/(count-1)<<endl;
+    
+}
 };
-
-  int main(){
-    Football obj1;
-    obj1.input();
-    cout<< "Average: " << obj1.calculate(obj1.sum)<<endl;
-
-    return 0;
-  }
+int main(){  
+  Football obj;
+  obj.calculate();
+  
+  return 0;
+}
